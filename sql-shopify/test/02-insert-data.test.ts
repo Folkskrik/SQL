@@ -41,7 +41,7 @@ const insertCategories = (categories: Category[]) => {
 
 const insertAppCategories = (appCategories: AppCategory[]) => {
     return (
-        `insert into app_categories (app_id, category_id) values` + 
+        `insert into apps_categories (app_id, category_id) values` + 
         appCategories.map(appCategory => 
             `('${appCategory.shopifyAppId}',
             '${appCategory.categoryId}')`).join(",")

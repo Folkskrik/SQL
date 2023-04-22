@@ -42,8 +42,8 @@ const CREATE_KEY_BENEFITS_TABLE = `create table ${KEY_BENEFITS} (
 app_id integer NOT NULL,
 title text NOT NULL,
 description text NOT NULL,
-PRIMARY KEY (app_id, title),
-FOREIGN KEY (app_id) REFERENCES apps(id) ON DELETE RESTRICT ON UPDATE CASCADE
+PRIMARY KEY(app_id, title),
+FOREIGN KEY(app_id) REFERENCES apps(id) ON DELETE CASCADE ON UPDATE CASCADE
 )`;
 
 const CREATE_PRICING_PLANS_TABLE = `create table ${PRICING_PLANS} (
@@ -67,7 +67,8 @@ const CREATE_REVIEWS_TABLE = `create table ${REVIEWS} (
     helpful_count integer NOT NULL,
     date_created text NOT NULL,
     developer_reply text NULL,
-    developer_reply_date text NULL
+    developer_reply_date text NULL,
+    FOREIGN KEY (app_id) REFERENCES apps(id) ON DELETE RESTRICT ON UPDATE CASCADE
 )`;
 
 const CREATE_INDEX_REVIEWS_AUTHOR = `create index reviews_author_idx on ${REVIEWS} (author)`;
