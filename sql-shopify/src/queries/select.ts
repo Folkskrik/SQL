@@ -1,9 +1,9 @@
 export const selectCount = (table: string): string => {
-  throw new Error(`todo`);
+  return `select count(*) as c from ${table}`;
 };
 
 export const selectRowById = (id: number, table: string): string => {
-  throw new Error(`todo`);
+  return `select * from ${table} where id = ${id}`;
 };
 
 export const selectCategoryByTitle = (title: string): string => {
@@ -15,11 +15,11 @@ export const selectAppCategoriesByAppId = (appId: number): string => {
 };
 
 export const selectUnigueRowCount = (tableName: string, columnName: string): string => {
-  throw new Error(`todo`);
+  return `select count(distinct("${columnName}")) as c from ${tableName}`;
 };
 
 export const selectReviewByAppIdAuthor = (appId: number, author: string): string => {
-  throw new Error(`todo`);
+  return `select * from ${appId} where author = ${author}`;
 };
 
 export const selectColumnFromTable = (columnName: string, tableName: string): string => {
