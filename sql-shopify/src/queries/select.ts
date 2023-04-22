@@ -15,7 +15,7 @@ export const selectAppCategoriesByAppId = (appId: number): string => {
 };
 
 export const selectUnigueRowCount = (tableName: string, columnName: string): string => {
-  return `select count(distinct("${columnName}")) as c from ${tableName}`;
+  return `select count(distinct "${columnName}") as c from ${tableName}`;
 };
 
 export const selectReviewByAppIdAuthor = (appId: number, author: string): string => {

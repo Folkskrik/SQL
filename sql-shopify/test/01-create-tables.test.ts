@@ -33,7 +33,7 @@ title text NOT NULL
 const CREATE_APPS_CATEGORIES_TABLE = `create table ${APPS_CATEGORIES} (
 app_id integer NOT NULL,
 category_id integer NOT NULL,
-PRIMARY KEY (app_id, category_id)
+PRIMARY KEY (app_id, category_id),
 FOREIGN KEY(app_id) REFERENCES apps(id) ON DELETE RESTRICT ON UPDATE CASCADE,
 FOREIGN KEY(category_id) REFERENCES categories(id) ON DELETE RESTRICT ON UPDATE CASCADE
 )`;
@@ -42,9 +42,8 @@ const CREATE_KEY_BENEFITS_TABLE = `create table ${KEY_BENEFITS} (
 app_id integer NOT NULL,
 title text NOT NULL,
 description text NOT NULL,
-PRIMARY KEY (app_id, title)
-FOREIGN KEY (app_id) REFERENCES apps(id) ON DELETE RESTRICT ON UPDATE CASCADE,
-FOREIGN KEY (title) REFERENCES apps(title) ON DELETE RESTRICT ON UPDATE CASCADE
+PRIMARY KEY (app_id, title),
+FOREIGN KEY (app_id) REFERENCES apps(id) ON DELETE RESTRICT ON UPDATE CASCADE
 )`;
 
 const CREATE_PRICING_PLANS_TABLE = `create table ${PRICING_PLANS} (
@@ -55,7 +54,7 @@ price text NOT NULL
 const CREATE_APPS_PRICING_PLANS_TABLE = `create table ${APPS_PRICING_PLANS} (
 app_id integer NOT NULL,
 pricing_plan_id integer NOT NULL,
-PRIMARY KEY (app_id, pricing_plan_id)
+PRIMARY KEY (app_id, pricing_plan_id),
 FOREIGN KEY (app_id) REFERENCES apps(id) ON DELETE RESTRICT ON UPDATE CASCADE,
 FOREIGN KEY (pricing_plan_id) REFERENCES pricing_plans(id) ON DELETE RESTRICT ON UPDATE CASCADE
 )`;

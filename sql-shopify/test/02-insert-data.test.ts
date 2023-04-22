@@ -50,7 +50,7 @@ const insertAppCategories = (appCategories: AppCategory[]) => {
 
 const insertKeyBenefits = (keyBenefits: KeyBenefit[]) => {
     return (
-        `insert into key_benefits (app_id, title, description)` + 
+        `insert into key_benefits (app_id, title, description) values` + 
         keyBenefits.map(keyBenefit => 
             `('${keyBenefit.shopifyAppId}',
             '${escape(keyBenefit.title)}',
